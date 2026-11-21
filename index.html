@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#1351B4">
+<title>CNH do Brasil - Estudo</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f2f5f9;color:#202936;font-family:Arial,sans-serif}
+header{background:#1351b4;color:white;padding:20px;font-size:20px;font-weight:bold}
+main{padding:16px;max-width:600px;margin:auto}
+.aviso{background:#fff0cc;color:#735000;padding:12px;border-radius:9px;text-align:center;font-size:12px;font-weight:bold}
+.boas{background:#1351b4;color:white;padding:25px 18px;border-radius:12px;margin-top:14px}
+.boas h1{font-size:25px}
+.documento,.servico{background:white;padding:16px;border-radius:12px;margin-top:14px;border:1px solid #e1e6ee}
+.documento h2{font-size:17px}
+.documento p,.servico p{font-size:13px;color:#667085}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.servico{color:#202936;text-align:left;font-size:14px;font-weight:bold;min-height:85px;border:1px solid #e1e6ee}
+.servico:active{background:#eaf1ff}
+footer{position:fixed;bottom:0;background:white;width:100%;padding:16px;text-align:center;border-top:1px solid #ddd;font-size:12px;color:#1351b4}
+main{padding-bottom:90px}
+</style>
+</head>
+<body>
+<header>CNH do Brasil | Estudo</header>
+<main>
+<div class="aviso">DEMONSTRAÇÃO — SEM VALIDADE OFICIAL</div>
+<section class="boas">
+<p>ÁREA DE ESTUDO</p>
+<h1>Olá! Bem-vindo.</h1>
+<p>Explore nossa plataforma demonstrativa de serviços de trânsito.</p>
+</section>
+<section class="documento">
+<h2>Meu perfil demonstrativo</h2>
+<strong>Usuário de Exemplo</strong>
+<p>Dados inteiramente fictícios</p>
+<p>Este espaço não representa uma habilitação verdadeira.</p>
+</section>
+<h2>Serviços</h2>
+<div class="grid" id="servicos"></div>
+<section class="documento">
+<h2>Sobre o projeto</h2>
+<p>Aplicativo independente para fins educativos. Não possui conexão com sistemas governamentais.</p>
+</section>
+</main>
+<footer>Início　|　Condutor　|　Veículos　|　Menu</footer>
+<script>
+const itens=[
+"Condutor","Gerencie sua habilitação","Veículos","CRLV-e demonstrativo",
+"Venda digital simulada","Infrações fictícias","Educação","Plataforma de cursos",
+"Serviços para CNH","Cadastro positivo","Credencial de estacionamento","Assistência virtual"
+];
+const grade=document.getElementById("servicos");
+itens.forEach(nome=>{
+const botao=document.createElement("button");
+botao.className="servico";
+botao.textContent=nome;
+botao.onclick=()=>alert(nome+" — Área demonstrativa, sem acesso a serviços oficiais.");
+grade.appendChild(botao);
+});
+</script>
+</body>
+</html>
