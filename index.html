@@ -1,74 +1,231 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#1351B4">
-<title>CNH do Brasil - Estudo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0756a5">
+<title>CNH do Brasil | Estudo</title>
+
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:#f2f5f9;color:#202936;font-family:Arial,sans-serif}
-header{background:#1351b4;color:white;padding:20px;font-size:20px;font-weight:bold}
-main{padding:16px;max-width:600px;margin:auto}
-.aviso{background:#fff0cc;color:#735000;padding:12px;border-radius:9px;text-align:center;font-size:12px;font-weight:bold}
-.boas{background:#1351b4;color:white;padding:25px 18px;border-radius:12px;margin-top:14px}
-.boas h1{font-size:25px}
-.documento,.servico{background:white;padding:16px;border-radius:12px;margin-top:14px;border:1px solid #e1e6ee}
-.documento h2{font-size:17px}
-.documento p,.servico p{font-size:13px;color:#667085}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.servico{color:#202936;text-align:left;font-size:14px;font-weight:bold;min-height:85px;border:1px solid #e1e6ee}
-.servico:active{background:#eaf1ff}
-footer{position:fixed;bottom:0;background:white;width:100%;padding:16px;text-align:center;border-top:1px solid #ddd;font-size:12px;color:#1351b4}
-main{padding-bottom:90px}
+body{margin:0;background:#f2f5f9;color:#172b45;font-family:Arial,sans-serif}
+header{background:#0756a5;color:white;padding:22px 20px 28px;border-radius:0 0 24px 24px}
+.top{display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:19px;font-weight:bold}
+.demo{font-size:10px;background:#fff;color:#0756a5;padding:7px 9px;border-radius:20px;font-weight:bold}
+.welcome{margin-top:25px}
+.welcome small{opacity:.85}
+.welcome h1{font-size:25px;margin:7px 0}
+main{padding:18px 16px 100px;max-width:650px;margin:auto}
+.notice{background:#fff3d9;color:#77520b;border:1px solid #f1d99e;padding:12px;border-radius:12px;font-size:12px;line-height:1.5;margin-bottom:18px}
+.profile{background:white;border-radius:16px;padding:17px;display:flex;align-items:center;gap:14px;box-shadow:0 3px 12px #122b4510;margin-bottom:22px}
+.avatar{width:48px;height:48px;border-radius:50%;background:#e4effb;display:grid;place-items:center;font-size:24px}
+.profile strong{display:block;margin-bottom:5px}
+.profile small{color:#718096}
+h2{font-size:18px;margin:22px 0 13px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.service{border:0;background:white;border-radius:15px;padding:17px 13px;text-align:left;min-height:112px;box-shadow:0 3px 12px #122b450c;color:#172b45}
+.service:active{transform:scale(.98)}
+.service .emoji{font-size:25px;display:block;margin-bottom:12px}
+.service strong{font-size:14px;line-height:1.35;display:block}
+.service small{display:block;color:#718096;margin-top:6px;font-size:11px}
+.primary{border:0;border-radius:12px;background:#0756a5;color:white;padding:13px 17px;font-weight:bold;width:100%;margin-top:12px}
+.secondary{border:1px solid #cbd7e5;border-radius:12px;background:white;color:#0756a5;padding:12px;width:100%;margin-top:10px;font-weight:bold}
+.panel{background:white;padding:18px;border-radius:16px;margin:14px 0;box-shadow:0 3px 12px #122b450c}
+.panel p{font-size:14px;line-height:1.6;color:#53657b}
+.rowline{display:flex;justify-content:space-between;gap:12px;padding:13px 0;border-bottom:1px solid #edf0f4;font-size:14px}
+.rowline:last-child{border:0}
+.tag{font-size:10px;color:#0756a5;background:#e8f2ff;padding:5px 8px;border-radius:20px}
+footer{position:fixed;bottom:0;left:0;right:0;background:white;border-top:1px solid #e5eaf0;display:flex;justify-content:space-around;padding:10px 3px max(10px,env(safe-area-inset-bottom));z-index:5}
+footer button{background:none;border:0;color:#64748b;font-size:11px;display:flex;flex-direction:column;align-items:center;gap:5px;min-width:58px}
+footer button span{font-size:21px}
+footer button.active{color:#0756a5;font-weight:bold}
+#splash{position:fixed;inset:0;background:linear-gradient(145deg,#064b91,#0873c8);color:white;z-index:10;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;transition:opacity .5s}
+#splash .mark{font-size:48px;margin-bottom:18px}
+#splash h1{font-size:25px;margin:0 20px 8px}
+#splash p{font-size:12px;opacity:.85}
+.loader{width:32px;height:32px;border:3px solid #ffffff55;border-top-color:white;border-radius:50%;animation:spin 1s linear infinite;margin-top:28px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hidden{display:none!important}
+.back{border:0;background:none;color:#0756a5;font-weight:bold;padding:5px 0;margin-bottom:10px}
 </style>
 </head>
+
 <body>
-<header>CNH do Brasil | Estudo</header>
-<main>
-<div class="aviso">DEMONSTRAÇÃO — SEM VALIDADE OFICIAL</div>
-<section class="boas">
-<p>ÁREA DE ESTUDO</p>
-<h1>Olá! Bem-vindo.</h1>
-<p>Explore nossa plataforma demonstrativa de serviços de trânsito.</p>
-</section>
-<section class="documento">
-<h2>Meu perfil demonstrativo</h2>
-<strong>Usuário de Exemplo</strong>
-<p>Dados inteiramente fictícios</p>
-<p>Este espaço não representa uma habilitação verdadeira.</p>
-</section>
-<h2>Serviços</h2>
-<div class="grid" id="servicos"></div>
-<section class="documento">
-<h2>Sobre o projeto</h2>
-<p>Aplicativo independente para fins educativos. Não possui conexão com sistemas governamentais.</p>
-</section>
+
+<div id="splash">
+  <div class="mark">🚘</div>
+  <h1>CNH do Brasil | Estudo</h1>
+  <p>Plataforma demonstrativa de trânsito</p>
+  <div class="loader"></div>
+  <p>Carregando sua área de estudo...</p>
+  <p>DEMONSTRAÇÃO — SEM VALIDADE OFICIAL</p>
+</div>
+
+<header>
+  <div class="top">
+    <div class="logo">🚘 CNH do Brasil | Estudo</div>
+    <div class="demo">DEMONSTRAÇÃO</div>
+  </div>
+  <div class="welcome">
+    <small>ÁREA DE ESTUDO</small>
+    <h1 id="greeting">Olá! Bem-vindo.</h1>
+    <small>Explore sua plataforma demonstrativa.</small>
+  </div>
+</header>
+
+<main id="content">
+  <div class="notice">
+    ⚠️ DEMONSTRAÇÃO — SEM VALIDADE OFICIAL.
+    Este aplicativo é independente e utiliza somente informações fictícias.
+    Não possui conexão com sistemas governamentais.
+  </div>
+
+  <section id="home">
+    <div class="profile">
+      <div class="avatar">👤</div>
+      <div>
+        <strong>Usuário de Exemplo</strong>
+        <small>Perfil inteiramente fictício</small>
+      </div>
+      <span class="tag">ESTUDO</span>
+    </div>
+
+    <h2>Serviços disponíveis</h2>
+    <div class="grid" id="services"></div>
+
+    <h2>Sobre o projeto</h2>
+    <div class="panel">
+      <strong>CNH do Brasil | Estudo</strong>
+      <p>Aplicativo independente para fins educativos. Todos os dados são fictícios. Nenhuma informação representa documento, habilitação ou serviço oficial.</p>
+    </div>
+  </section>
+
+  <section id="detail" class="hidden">
+    <button class="back" onclick="showPage('home')">← Voltar ao início</button>
+    <div class="panel">
+      <div style="font-size:35px" id="detailIcon">📄</div>
+      <h2 id="detailTitle">Serviço demonstrativo</h2>
+      <span class="tag">SIMULAÇÃO EDUCATIVA</span>
+      <p id="detailText"></p>
+      <div class="notice">Este conteúdo é fictício e não tem validade oficial.</div>
+      <button class="primary" onclick="demoMessage()">Consultar demonstração</button>
+      <button class="secondary" onclick="showPage('home')">Voltar aos serviços</button>
+    </div>
+  </section>
+
+  <section id="driver" class="hidden">
+    <h2>Área do condutor</h2>
+    <div class="panel">
+      <div class="avatar">👤</div>
+      <h2>Usuário de Exemplo</h2>
+      <p>Cadastro demonstrativo. Nenhum dado pessoal ou documento verdadeiro está cadastrado.</p>
+      <div class="rowline"><span>Categoria</span><strong>AB — FICTÍCIA</strong></div>
+      <div class="rowline"><span>Situação</span><strong>DEMONSTRAÇÃO</strong></div>
+      <div class="rowline"><span>Validade</span><strong>SEM VALIDADE</strong></div>
+    </div>
+  </section>
+
+  <section id="vehicles" class="hidden">
+    <h2>Meus veículos</h2>
+    <div class="panel">
+      <div style="font-size:30px">🚗</div>
+      <strong>Veículo de exemplo</strong>
+      <p>Veículo fictício utilizado somente para demonstrar a interface.</p>
+      <div class="rowline"><span>Modelo</span><strong>Carro demonstrativo</strong></div>
+      <div class="rowline"><span>Placa</span><strong>EXEMPLO-00</strong></div>
+      <div class="rowline"><span>Documento</span><strong>SEM VALIDADE</strong></div>
+    </div>
+  </section>
+
+  <section id="menu" class="hidden">
+    <h2>Menu</h2>
+    <div class="panel">
+      <button class="secondary" onclick="showPage('driver')">👤 Meu perfil demonstrativo</button>
+      <button class="secondary" onclick="showPage('vehicles')">🚗 Meus veículos</button>
+      <button class="secondary" onclick="showPage('home')">🏠 Início</button>
+      <button class="secondary" onclick="about()">ℹ️ Sobre o aplicativo</button>
+    </div>
+    <div class="panel">
+      <strong>Privacidade e segurança</strong>
+      <p>Este projeto não solicita documentos, senhas ou dados de acesso a serviços oficiais.</p>
+    </div>
+  </section>
 </main>
-<footer>Início　|　Condutor　|　Veículos　|　Menu</footer>
+
+<footer>
+  <button class="active" data-page="home" onclick="showPage('home')"><span>⌂</span>Início</button>
+  <button data-page="driver" onclick="showPage('driver')"><span>👤</span>Condutor</button>
+  <button data-page="vehicles" onclick="showPage('vehicles')"><span>🚗</span>Veículos</button>
+  <button data-page="menu" onclick="showPage('menu')"><span>☰</span>Menu</button>
+</footer>
+
 <script>
-const itens=[
-"Condutor","Gerencie sua habilitação","Veículos","CRLV-e demonstrativo",
-"Venda digital simulada","Infrações fictícias","Educação","Plataforma de cursos",
-"Serviços para CNH","Cadastro positivo","Credencial de estacionamento","Assistência virtual"
+const services = [
+  ["👤","Condutor","Área demonstrativa do condutor."],
+  ["🪪","Gerencie sua habilitação","Informações fictícias de habilitação."],
+  ["🚗","Veículos","Área de veículos demonstrativos."],
+  ["📄","CRLV-e demonstrativo","Documento de exemplo sem validade."],
+  ["🔁","Venda digital simulada","Simulação educativa de venda."],
+  ["⚠️","Infrações fictícias","Exemplos de infrações de trânsito."],
+  ["📚","Educação","Conteúdos educativos de trânsito."],
+  ["🎓","Plataforma de cursos","Área de cursos demonstrativos."],
+  ["📝","Serviços para CNH","Informações educativas sobre CNH."],
+  ["⭐","Cadastro positivo","Exemplo de cadastro demonstrativo."],
+  ["♿","Credencial de estacionamento","Informações educativas."],
+  ["💬","Assistência virtual","Ajuda demonstrativa do aplicativo."]
 ];
-const grade=document.getElementById("servicos");
-itens.forEach(nome=>{
-const botao=document.createElement("button");
-botao.className="servico";
-botao.textContent=nome;
-botao.onclick=()=>alert(nome+" — Área demonstrativa, sem acesso a serviços oficiais.");
-grade.appendChild(botao);
+
+const servicesBox = document.getElementById("services");
+
+services.forEach((item,index) => {
+  const button = document.createElement("button");
+  button.className = "service";
+  button.innerHTML = `<span class="emoji">${item[0]}</span><strong>${item[1]}</strong><small>Ver demonstração →</small>`;
+  button.addEventListener("click", () => openService(index));
+  servicesBox.appendChild(button);
 });
-</script>
-<script>
+
+function showPage(page) {
+  ["home","detail","driver","vehicles","menu"].forEach(id => {
+    document.getElementById(id).classList.toggle("hidden",id !== page);
+  });
+  document.querySelectorAll("footer button").forEach(button => {
+    button.classList.toggle("active",button.dataset.page === page);
+  });
+  window.scrollTo(0,0);
+}
+
+function openService(index) {
+  const item = services[index];
+  document.getElementById("detailIcon").textContent = item[0];
+  document.getElementById("detailTitle").textContent = item[1];
+  document.getElementById("detailText").textContent = item[2] + " Este espaço contém apenas informações fictícias para fins de estudo.";
+  showPage("detail");
+}
+
+function demoMessage() {
+  alert("Esta é uma consulta fictícia. Nenhum serviço oficial foi acessado.");
+}
+
+function about() {
+  alert("CNH do Brasil | Estudo. Aplicativo independente e demonstrativo, sem validade oficial.");
+}
+
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    document.getElementById("splash").style.opacity = "0";
+    setTimeout(() => document.getElementById("splash").remove(),500);
+  },1400);
+});
+
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
-    navigator.serviceWorker.register("./sw.js")
-      .then(() => console.log("Offline ativado"))
-      .catch(error => console.log(error));
+    navigator.serviceWorker.register("./sw.js");
   });
 }
 </script>
+
 </body>
 </html>
