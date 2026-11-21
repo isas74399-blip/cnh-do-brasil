@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#102c50">
 <title>CNH Estudo</title>
 <link rel="manifest" href="./manifest.webmanifest">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -21,11 +21,14 @@ body {
   background: #ffffff;
   color: #263548;
   font-family: Arial, sans-serif;
+  min-height: 100vh;
 }
 
 header {
-  background: #ffffff;
-  padding: 20px 18px 15px;
+  background: #102c50;
+  color: #ffffff;
+  padding: 20px 18px;
+  border-radius: 0 0 22px 22px;
 }
 
 .top {
@@ -43,22 +46,37 @@ header {
 
 .header-left strong {
   font-size: 19px;
+  letter-spacing: 1px;
+  color: #ffffff;
 }
 
 .header-button {
   border: 0;
   background: transparent;
-  color: #263548;
-  font-size: 27px;
+  color: #ffffff;
   padding: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-button svg {
+  width: 25px;
+  height: 25px;
+  stroke: #ffffff;
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .avatar {
   width: 39px;
   height: 39px;
   border-radius: 50%;
-  background: #e5edf7;
-  color: #174477;
+  background: #102c50;
+  border: 1.5px solid #ffffff;
+  color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,33 +84,16 @@ header {
   font-weight: bold;
 }
 
-.subtitle {
-  color: #758295;
-  font-size: 10px;
-  margin-top: 15px;
-  letter-spacing: .5px;
-}
-
 main {
-  padding: 10px 17px 105px;
+  padding: 22px 17px 30px;
   max-width: 650px;
   margin: auto;
-}
-
-.demo-notice {
-  background: #f2f5f9;
-  border-radius: 10px;
-  padding: 10px 12px;
-  font-size: 10px;
-  color: #53657b;
-  line-height: 1.5;
-  margin-bottom: 17px;
 }
 
 .cards {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 16px;
 }
 
 .service-card {
@@ -102,12 +103,12 @@ main {
   border-radius: 15px;
   padding: 19px;
   text-align: left;
-  color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
-  box-shadow: 0 3px 9px #00000012;
+  box-shadow: 0 4px 11px #00000018;
+  transition: transform .15s;
 }
 
 .service-card:active {
@@ -118,7 +119,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 9px;
-  max-width: 80%;
+  max-width: 82%;
 }
 
 .service-title {
@@ -133,23 +134,42 @@ main {
 }
 
 .service-icon {
-  font-size: 34px;
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-icon svg {
+  width: 34px;
+  height: 34px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .green {
-  background: #287a45;
+  background: #168447;
+  color: #ffffff;
 }
 
 .yellow {
-  background: #b88a16;
+  background: #e3a900;
+  color: #000000;
 }
 
 .dark-blue {
-  background: #174477;
+  background: #0755a8;
+  color: #ffffff;
 }
 
 .light-blue {
-  background: #2585b5;
+  background: #16a0d2;
+  color: #000000;
 }
 
 h2 {
@@ -220,28 +240,37 @@ footer {
   bottom: 0;
   left: 0;
   right: 0;
-  background: white;
-  border-top: 1px solid #e7ebf0;
+  min-height: 76px;
+  background: #e7e9ec;
+  border-top: 1px solid #dce1e7;
   display: flex;
   justify-content: space-around;
-  padding: 10px 4px max(10px, env(safe-area-inset-bottom));
+  align-items: center;
+  padding: 12px 4px max(18px, env(safe-area-inset-bottom));
   z-index: 5;
 }
 
 footer button {
   background: none;
   border: none;
-  color: #718096;
+  color: #526171;
   font-size: 11px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 5px;
   min-width: 60px;
+  padding: 3px;
 }
 
-footer button span {
-  font-size: 21px;
+footer button svg {
+  width: 23px;
+  height: 23px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 footer button.active {
@@ -252,7 +281,7 @@ footer button.active {
 #splash {
   position: fixed;
   inset: 0;
-  background: linear-gradient(145deg,#174477,#2585b5);
+  background: linear-gradient(145deg,#102c50,#1689c0);
   color: white;
   z-index: 10;
   display: flex;
@@ -264,8 +293,19 @@ footer button.active {
 }
 
 #splash .mark {
-  font-size: 48px;
+  width: 65px;
+  height: 65px;
   margin-bottom: 18px;
+}
+
+#splash .mark svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: white;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 #splash h1 {
@@ -289,13 +329,27 @@ footer button.active {
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
+
+@media (max-height: 700px) {
+  main {
+    padding-bottom: 105px;
+  }
+}
 </style>
 </head>
 
 <body>
 
 <div id="splash">
-  <div class="mark">🚘</div>
+  <div class="mark">
+    <svg viewBox="0 0 64 64">
+      <path d="M8 38h5l5-13h27l9 13h3a4 4 0 0 1 4 4v8H6v-8a4 4 0 0 1 2-4z"/>
+      <path d="M19 25l5-10h17l4 10"/>
+      <circle cx="18" cy="49" r="5"/>
+      <circle cx="49" cy="49" r="5"/>
+      <path d="M25 38h12"/>
+    </svg>
+  </div>
   <h1>CNH Estudo</h1>
   <p>Plataforma demonstrativa</p>
   <div class="loader"></div>
@@ -305,29 +359,27 @@ footer button.active {
 <header>
   <div class="top">
     <div class="header-left">
-      <button class="header-button"
-        onclick="showPage('menu')">⋯</button>
-      <strong>Isadora</strong>
+      <button class="header-button" onclick="showPage('menu')" aria-label="Abrir menu">
+        <svg viewBox="0 0 24 24">
+          <path d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+      <strong>ISADORA</strong>
     </div>
 
     <div class="header-right">
-      <button class="header-button"
-        onclick="demoMessage()">♧</button>
+      <button class="header-button" onclick="demoMessage()" aria-label="Notificações">
+        <svg viewBox="0 0 24 24">
+          <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/>
+          <path d="M10 21h4"/>
+        </svg>
+      </button>
       <div class="avatar">I</div>
     </div>
-  </div>
-
-  <div class="subtitle">
-    CNH ESTUDO · DEMONSTRAÇÃO
   </div>
 </header>
 
 <main>
-
-<div class="demo-notice">
-  DEMONSTRAÇÃO — SEM VALIDADE OFICIAL.
-  Aplicativo independente com informações fictícias.
-</div>
 
 <section id="home">
   <div class="cards">
@@ -339,10 +391,15 @@ footer button.active {
       <div class="service-info">
         <span class="service-title">CONDUTOR</span>
         <span class="service-description">
-          Gerencie sua habilitação
+          Gerencie sua <strong>habilitação</strong>
         </span>
       </div>
-      <span class="service-icon">👤</span>
+      <span class="service-icon">
+        <svg viewBox="0 0 24 24">
+          <circle cx="12" cy="8" r="4"/>
+          <path d="M4 21v-2a8 8 0 0 1 16 0v2"/>
+        </svg>
+      </span>
     </button>
 
     <button class="service-card yellow"
@@ -352,10 +409,17 @@ footer button.active {
       <div class="service-info">
         <span class="service-title">VEÍCULOS</span>
         <span class="service-description">
-          Acesso ao CRLV-e, venda digital
+          Acesso ao <strong>CRLV-e</strong>, venda digital
         </span>
       </div>
-      <span class="service-icon">🚗</span>
+      <span class="service-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M5 17h14l1-6-2-5H6l-2 5 1 6z"/>
+          <path d="M4 11h16M7 17v2m10-2v2"/>
+          <circle cx="7.5" cy="14" r="1"/>
+          <circle cx="16.5" cy="14" r="1"/>
+        </svg>
+      </span>
     </button>
 
     <button class="service-card dark-blue"
@@ -365,10 +429,15 @@ footer button.active {
       <div class="service-info">
         <span class="service-title">INFRAÇÕES</span>
         <span class="service-description">
-          Visualize informações sobre infrações e conheça a simulação de descontos
+          Visualize informações sobre infrações e conheça a simulação de <strong>40% de desconto</strong>
         </span>
       </div>
-      <span class="service-icon">📄</span>
+      <span class="service-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M6 3h9l4 4v14H6z"/>
+          <path d="M15 3v5h4M9 12h7M9 16h7"/>
+        </svg>
+      </span>
     </button>
 
     <button class="service-card light-blue"
@@ -378,10 +447,15 @@ footer button.active {
       <div class="service-info">
         <span class="service-title">EDUCAÇÃO</span>
         <span class="service-description">
-          Conheça nossa plataforma de cursos
+          Conheça nossa <strong>plataforma de cursos</strong>
         </span>
       </div>
-      <span class="service-icon">🎓</span>
+      <span class="service-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M2 9l10-5 10 5-10 5z"/>
+          <path d="M6 11v5c3 3 9 3 12 0v-5M22 9v7"/>
+        </svg>
+      </span>
     </button>
 
   </div>
@@ -462,22 +536,38 @@ footer button.active {
 <footer>
   <button class="active" data-page="home"
     onclick="showPage('home')">
-    <span>⌂</span>Início
+    <svg viewBox="0 0 24 24">
+      <path d="M3 11l9-8 9 8M5 10v10h14V10M9 20v-6h6v6"/>
+    </svg>
+    Início
   </button>
 
   <button data-page="driver"
     onclick="showPage('driver')">
-    <span>👤</span>Condutor
+    <svg viewBox="0 0 24 24">
+      <circle cx="12" cy="8" r="4"/>
+      <path d="M4 21v-2a8 8 0 0 1 16 0v2"/>
+    </svg>
+    Condutor
   </button>
 
   <button data-page="vehicles"
     onclick="showPage('vehicles')">
-    <span>🚗</span>Veículos
+    <svg viewBox="0 0 24 24">
+      <path d="M5 17h14l1-6-2-5H6l-2 5 1 6z"/>
+      <path d="M4 11h16M7 17v2m10-2v2"/>
+      <circle cx="7.5" cy="14" r="1"/>
+      <circle cx="16.5" cy="14" r="1"/>
+    </svg>
+    Veículos
   </button>
 
   <button data-page="menu"
     onclick="showPage('menu')">
-    <span>☰</span>Menu
+    <svg viewBox="0 0 24 24">
+      <path d="M4 6h16M4 12h16M4 18h16"/>
+    </svg>
+    Menu
   </button>
 </footer>
 
@@ -515,10 +605,11 @@ function about() {
 
 window.addEventListener("load", () => {
   setTimeout(() => {
-    document.getElementById("splash").style.opacity = "0";
-    setTimeout(() => {
-      document.getElementById("splash").remove();
-    }, 500);
+    const splash = document.getElementById("splash");
+    if (splash) {
+      splash.style.opacity = "0";
+      setTimeout(() => splash.remove(), 500);
+    }
   }, 1400);
 });
 
