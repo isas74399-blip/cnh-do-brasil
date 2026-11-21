@@ -1,0 +1,11 @@
+
+{
+  "name": "CNH do Brasil | Estudo",
+  "short_name": "CNH Estudo",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0756a5",
+  "theme_color": "#0756a5",
+  "description": "Aplicativo demonstrativo sem validade oficial."
+}
