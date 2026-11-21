@@ -61,5 +61,14 @@ botao.onclick=()=>alert(nome+" — Área demonstrativa, sem acesso a serviços o
 grade.appendChild(botao);
 });
 </script>
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js")
+      .then(() => console.log("Offline ativado"))
+      .catch(error => console.log(error));
+  });
+}
+</script>
 </body>
 </html>
