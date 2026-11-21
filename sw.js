@@ -1,5 +1,4 @@
-
-const CACHE_NAME = "cnh-estudo-v1";
+const CACHE_NAME = "cnh-estudo-v2";
 const FILES = ["./", "./index.html"];
 
 self.addEventListener("install", event => {
