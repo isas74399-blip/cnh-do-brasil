@@ -278,6 +278,8 @@ footer button.active {
   font-weight: bold;
 }
 
+/* ABERTURA */
+
 #splash {
   position: fixed;
   inset: 0;
@@ -328,6 +330,232 @@ footer button.active {
 
 @keyframes spin {
   to { transform: rotate(360deg); }
+}
+
+/* NOVA TELA CONDUTOR */
+
+#driver {
+  padding: 0;
+  margin: -22px -17px -30px;
+  background: #ffffff;
+  min-height: 100vh;
+  color: #263548;
+}
+
+.driver-header {
+  width: 100%;
+  min-height: 66px;
+  padding: 12px 18px;
+  background: #102c50;
+  border-bottom: 3px solid #dce1e7;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.driver-back {
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  border: none;
+  background: #687586;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.driver-back svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 2.3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.driver-header strong {
+  color: #ffffff;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.driver-content {
+  padding: 17px 15px 35px;
+  max-width: 650px;
+  margin: auto;
+}
+
+.driver-demo {
+  color: #66768a;
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: .5px;
+  margin: 0 0 12px;
+}
+
+.driver-info-card {
+  background: #ffffff;
+  border: 1px solid #dfe3e8;
+  border-radius: 12px;
+  padding: 17px 15px;
+  box-shadow: 0 2px 7px #0000000b;
+}
+
+.driver-info-title {
+  font-size: 17px;
+  font-weight: bold;
+  color: #263548;
+  margin: 0 0 13px;
+  padding-bottom: 13px;
+  border-bottom: 1px solid #dfe3e8;
+}
+
+.driver-field {
+  min-width: 0;
+}
+
+.driver-field label {
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  color: #354458;
+  margin-bottom: 6px;
+}
+
+.driver-field span {
+  display: block;
+  font-size: 14px;
+  color: #263548;
+  overflow-wrap: anywhere;
+}
+
+.driver-name {
+  margin-bottom: 19px;
+}
+
+.driver-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 14px;
+  row-gap: 19px;
+}
+
+.security-field {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #e5e8ec;
+}
+
+.security-value {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.security-toggle {
+  border: none;
+  background: transparent;
+  color: #0755a8;
+  padding: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.security-toggle svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: #0755a8;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.driver-services {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.driver-service {
+  min-height: 122px;
+  border: 1px solid #e1e6ed;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #0755a8;
+  padding: 15px 9px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  text-align: center;
+  box-shadow: 0 2px 7px #0000000a;
+  cursor: pointer;
+}
+
+.driver-service:active {
+  background: #f4f8fc;
+}
+
+.driver-service svg {
+  width: 38px;
+  height: 38px;
+  fill: none;
+  stroke: #0755a8;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+
+.driver-service strong {
+  font-size: 11px;
+  line-height: 1.4;
+  letter-spacing: .2px;
+}
+
+#driver .driver-notice {
+  margin: 17px 0 0;
+  color: #788596;
+  font-size: 10px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+body.driver-open > header,
+body.driver-open > footer {
+  display: none;
+}
+
+@media (max-width: 360px) {
+  .driver-content {
+    padding-left: 11px;
+    padding-right: 11px;
+  }
+
+  .driver-info-card {
+    padding: 14px 11px;
+  }
+
+  .driver-grid {
+    column-gap: 8px;
+  }
+
+  .driver-field span {
+    font-size: 12px;
+  }
+
+  .driver-service strong {
+    font-size: 10px;
+  }
 }
 
 @media (max-height: 700px) {
@@ -385,9 +613,7 @@ footer button.active {
   <div class="cards">
 
     <button class="service-card green"
-      onclick="openService('Condutor',
-      'Gerencie sua habilitação',
-      'Área demonstrativa de informações do condutor.')">
+      onclick="showPage('driver')">
       <div class="service-info">
         <span class="service-title">CONDUTOR</span>
         <span class="service-description">
@@ -477,23 +703,162 @@ footer button.active {
   </div>
 </section>
 
+<!-- NOVA TELA CONDUTOR -->
+
 <section id="driver" class="hidden">
-  <h2>Condutor</h2>
-  <div class="panel">
-    <strong>Perfil demonstrativo</strong>
-    <p>Informações fictícias para fins de estudo.</p>
-    <div class="rowline">
-      <span>Categoria</span>
-      <strong>AB — FICTÍCIA</strong>
+
+  <div class="driver-header">
+    <button class="driver-back"
+      onclick="showPage('home')"
+      aria-label="Voltar">
+      <svg viewBox="0 0 24 24">
+        <path d="M15 18l-6-6 6-6"/>
+      </svg>
+    </button>
+    <strong>CONDUTOR</strong>
+  </div>
+
+  <div class="driver-content">
+
+    <p class="driver-demo">
+      DADOS FICTÍCIOS — DEMONSTRAÇÃO SEM VALIDADE OFICIAL
+    </p>
+
+    <div class="driver-info-card">
+
+      <h2 class="driver-info-title">
+        Informações do Condutor
+      </h2>
+
+      <div class="driver-field driver-name">
+        <label>Nome</label>
+        <span>I***** A***** D** S***** P*******</span>
+      </div>
+
+      <div class="driver-grid">
+
+        <div class="driver-field">
+          <label>CPF</label>
+          <span>***.100.919-**</span>
+        </div>
+
+        <div class="driver-field">
+          <label>Sexo</label>
+          <span>FEMININO</span>
+        </div>
+
+        <div class="driver-field">
+          <label>Categoria</label>
+          <span>AB</span>
+        </div>
+
+        <div class="driver-field">
+          <label>UF de Emissão</label>
+          <span>PR</span>
+        </div>
+
+        <div class="driver-field">
+          <label>Data de Validade</label>
+          <span>12/06/2028</span>
+        </div>
+
+        <div class="driver-field">
+          <label>Data de Emissão</label>
+          <span>12/12/2025</span>
+        </div>
+
+      </div>
+
+      <div class="driver-field security-field">
+        <label>Número de Segurança CNH</label>
+
+        <div class="security-value">
+          <span id="securityNumber">***********</span>
+
+          <button class="security-toggle"
+            id="securityToggle"
+            onclick="toggleSecurity()"
+            aria-label="Mostrar número demonstrativo">
+            <svg viewBox="0 0 24 24">
+              <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
     </div>
-    <div class="rowline">
-      <span>Situação</span>
-      <strong>DEMONSTRAÇÃO</strong>
+
+    <!-- CARTÕES DE SERVIÇOS -->
+
+    <div class="driver-services">
+
+      <!-- CNH -->
+
+      <button class="driver-service"
+        onclick="driverServiceMessage('CNH')">
+
+        <svg viewBox="0 0 48 48">
+          <rect x="4" y="7" width="40" height="34" rx="4"/>
+          <circle cx="15" cy="19" r="5"/>
+          <path d="M8 33c1-5 3-7 7-7s6 2 7 7M27 17h11M27 23h11M27 29h8"/>
+        </svg>
+
+        <strong>CNH</strong>
+      </button>
+
+      <!-- SERVIÇOS PARA CNH -->
+
+      <button class="driver-service"
+        onclick="driverServiceMessage('Serviços para CNH')">
+
+        <svg viewBox="0 0 48 48">
+          <path d="M7 13l17-8 17 8v14c0 8-7 13-17 17C14 40 7 35 7 27z"/>
+          <path d="M24 12v23M15 17l9 5 9-5M15 28h18"/>
+          <circle cx="36" cy="35" r="9" fill="#ffffff" stroke="#0755a8"/>
+          <path d="M32 35l3 3 5-6"/>
+        </svg>
+
+        <strong>SERVIÇOS PARA CNH</strong>
+      </button>
+
+      <!-- CADASTRO POSITIVO -->
+
+      <button class="driver-service"
+        onclick="driverServiceMessage('Cadastro Positivo')">
+
+        <svg viewBox="0 0 48 48">
+          <circle cx="24" cy="14" r="8"/>
+          <path d="M9 40c1-9 6-14 15-14s14 5 15 14z"/>
+          <path d="M24 29l2 4 5 1-4 3 1 5-4-3-4 3 1-5-4-3 5-1z"/>
+        </svg>
+
+        <strong>CADASTRO POSITIVO</strong>
+      </button>
+
+      <!-- CREDENCIAL DE ESTACIONAMENTO -->
+
+      <button class="driver-service"
+        onclick="driverServiceMessage('Credencial de Estacionamento')">
+
+        <svg viewBox="0 0 48 48">
+          <circle cx="24" cy="24" r="19"/>
+          <path d="M19 35V13h9a8 8 0 0 1 0 16h-9"/>
+        </svg>
+
+        <strong>
+          CREDENCIAL DE<br>
+          ESTACIONAMENTO
+        </strong>
+      </button>
+
     </div>
-    <div class="rowline">
-      <span>Validade</span>
-      <strong>SEM VALIDADE</strong>
-    </div>
+
+    <p class="driver-notice">
+      Aplicativo independente de demonstração.
+      Não representa documento oficial nem consulta sistemas governamentais.
+    </p>
+
   </div>
 </section>
 
@@ -579,6 +944,10 @@ function showPage(page) {
     );
   });
 
+  document.body.classList.toggle(
+    "driver-open", page === "driver"
+  );
+
   document.querySelectorAll("footer button").forEach(button => {
     button.classList.toggle(
       "active", button.dataset.page === page
@@ -593,6 +962,32 @@ function openService(title, subtitle, description) {
   document.getElementById("detailSubtitle").textContent = subtitle;
   document.getElementById("detailText").textContent = description;
   showPage("detail");
+}
+
+function toggleSecurity() {
+  const number = document.getElementById("securityNumber");
+  const button = document.getElementById("securityToggle");
+
+  if (number.textContent === "***********") {
+    number.textContent = "00000000000";
+    button.setAttribute(
+      "aria-label",
+      "Ocultar número demonstrativo"
+    );
+  } else {
+    number.textContent = "***********";
+    button.setAttribute(
+      "aria-label",
+      "Mostrar número demonstrativo"
+    );
+  }
+}
+
+function driverServiceMessage(service) {
+  alert(
+    service +
+    "\n\nEsta opção é apenas demonstrativa. Nenhum serviço oficial foi acessado."
+  );
 }
 
 function demoMessage() {
