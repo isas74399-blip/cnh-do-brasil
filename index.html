@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -256,53 +255,26 @@ footer button.active {
   font-weight: bold;
 }
 
-/* ABERTURA */
+/* TELA DE ABERTURA */
 
 #splash {
   position: fixed;
   inset: 0;
-  background: linear-gradient(145deg,#102c50,#1689c0);
-  color: white;
-  z-index: 10;
+  background: #ffffff;
+  z-index: 1000;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  transition: opacity .5s;
+  opacity: 1;
+  transition: opacity .5s ease;
 }
 
-#splash .mark {
-  width: 65px;
-  height: 65px;
-  margin-bottom: 18px;
-}
-
-#splash .mark svg {
-  width: 100%;
-  height: 100%;
-  fill: none;
-  stroke: white;
-  stroke-width: 1.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-#splash h1 { font-size: 24px; }
-#splash p { font-size: 12px; }
-
-.loader {
-  width: 30px;
-  height: 30px;
-  border: 3px solid #ffffff55;
-  border-top-color: white;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  margin-top: 20px;
-}
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
+#splash img {
+  display: block;
+  width: 75%;
+  max-width: 300px;
+  max-height: 60vh;
+  object-fit: contain;
 }
 
 /* TELA CONDUTOR */
@@ -514,19 +486,7 @@ body.driver-open > footer {
 <body>
 
 <div id="splash">
-  <div class="mark">
-    <svg viewBox="0 0 64 64">
-      <path d="M8 38h5l5-13h27l9 13h3a4 4 0 0 1 4 4v8H6v-8a4 4 0 0 1 2-4z"/>
-      <path d="M19 25l5-10h17l4 10"/>
-      <circle cx="18" cy="49" r="5"/>
-      <circle cx="49" cy="49" r="5"/>
-      <path d="M25 38h12"/>
-    </svg>
-  </div>
-  <h1>CNH Estudo</h1>
-  <p>Plataforma demonstrativa</p>
-  <div class="loader"></div>
-  <p>DEMONSTRAÇÃO — SEM VALIDADE OFICIAL</p>
+  <img src="./abertura.jpeg" alt="Imagem de abertura do CNH Estudo">
 </div>
 
 <header>
@@ -657,19 +617,19 @@ body.driver-open > footer {
 
       <div class="driver-field driver-name">
         <label>Nome</label>
-        <span id="driverName" data-hidden="I****** A***** D** S***** P******" data-visible="Isadora Agggens Dos Santos Pereira">I****** A***** D** S***** P******</span>
+        <span id="driverName" data-hidden="USUÁRIO DEMONSTRATIVO" data-visible="USUÁRIO DEMONSTRATIVO">USUÁRIO DEMONSTRATIVO</span>
       </div>
 
       <div class="driver-grid">
 
         <div class="driver-field">
           <label>CPF</label>
-          <span id="driverCpf" data-hidden="***.***.***-**" data-visible="118.100.919-77">***.***.***-**</span>
+          <span id="driverCpf" data-hidden="***.***.***-**" data-visible="000.000.000-00">***.***.***-**</span>
         </div>
 
         <div class="driver-field">
           <label>Sexo</label>
-          <span>FEMININO</span>
+          <span>FICTÍCIO</span>
         </div>
 
         <div class="driver-field">
@@ -697,7 +657,7 @@ body.driver-open > footer {
       <div class="driver-field security-field">
         <label>Número de Segurança CNH</label>
         <div class="security-value">
-          <span id="securityNumber" data-hidden="***********" data-visible="04706873270">***********</span>
+          <span id="securityNumber" data-hidden="***********" data-visible="00000000000">***********</span>
 
           <button class="security-toggle"
             id="securityToggle"
@@ -852,7 +812,7 @@ function openService(title, subtitle, description) {
   showPage("detail");
 }
 
-/* MOSTRAR E OCULTAR TODOS OS CAMPOS */
+/* MOSTRAR E OCULTAR OS CAMPOS DEMONSTRATIVOS */
 
 let dadosVisiveis = false;
 
@@ -898,14 +858,20 @@ function about() {
   alert("CNH Estudo: aplicativo independente de demonstração, sem validade oficial.");
 }
 
+/* TEMPO DA TELA DE ABERTURA */
+
 window.addEventListener("load", () => {
   setTimeout(() => {
     const splash = document.getElementById("splash");
+
     if (splash) {
       splash.style.opacity = "0";
-      setTimeout(() => splash.remove(), 500);
+
+      setTimeout(() => {
+        splash.remove();
+      }, 500);
     }
-  }, 1400);
+  }, 2000);
 });
 
 /* ATUALIZAÇÃO DO SERVICE WORKER */
