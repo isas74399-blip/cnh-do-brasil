@@ -12,9 +12,7 @@
 <meta name="apple-mobile-web-app-title" content="CNH Estudo">
 
 <style>
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
@@ -37,8 +35,7 @@ header {
   justify-content: space-between;
 }
 
-.header-left,
-.header-right {
+.header-left, .header-right {
   display: flex;
   align-items: center;
   gap: 15px;
@@ -111,9 +108,7 @@ main {
   transition: transform .15s;
 }
 
-.service-card:active {
-  transform: scale(.985);
-}
+.service-card:active { transform: scale(.985); }
 
 .service-info {
   display: flex;
@@ -152,25 +147,10 @@ main {
   stroke-linejoin: round;
 }
 
-.green {
-  background: #168447;
-  color: #ffffff;
-}
-
-.yellow {
-  background: #e3a900;
-  color: #000000;
-}
-
-.dark-blue {
-  background: #0755a8;
-  color: #ffffff;
-}
-
-.light-blue {
-  background: #16a0d2;
-  color: #000000;
-}
+.green { background: #168447; color: #ffffff; }
+.yellow { background: #e3a900; color: #000000; }
+.dark-blue { background: #0755a8; color: #ffffff; }
+.light-blue { background: #16a0d2; color: #000000; }
 
 h2 {
   font-size: 18px;
@@ -231,9 +211,7 @@ h2 {
   font-size: 13px;
 }
 
-.hidden {
-  display: none !important;
-}
+.hidden { display: none !important; }
 
 footer {
   position: fixed;
@@ -310,13 +288,8 @@ footer button.active {
   stroke-linejoin: round;
 }
 
-#splash h1 {
-  font-size: 24px;
-}
-
-#splash p {
-  font-size: 12px;
-}
+#splash h1 { font-size: 24px; }
+#splash p { font-size: 12px; }
 
 .loader {
   width: 30px;
@@ -332,7 +305,7 @@ footer button.active {
   to { transform: rotate(360deg); }
 }
 
-/* NOVA TELA CONDUTOR */
+/* TELA CONDUTOR */
 
 #driver {
   padding: 0;
@@ -388,15 +361,6 @@ footer button.active {
   margin: auto;
 }
 
-.driver-demo {
-  color: #66768a;
-  font-size: 10px;
-  font-weight: bold;
-  text-align: center;
-  letter-spacing: .5px;
-  margin: 0 0 12px;
-}
-
 .driver-info-card {
   background: #ffffff;
   border: 1px solid #dfe3e8;
@@ -414,9 +378,7 @@ footer button.active {
   border-bottom: 1px solid #dfe3e8;
 }
 
-.driver-field {
-  min-width: 0;
-}
+.driver-field { min-width: 0; }
 
 .driver-field label {
   display: block;
@@ -433,9 +395,7 @@ footer button.active {
   overflow-wrap: anywhere;
 }
 
-.driver-name {
-  margin-bottom: 19px;
-}
+.driver-name { margin-bottom: 19px; }
 
 .driver-grid {
   display: grid;
@@ -501,9 +461,7 @@ footer button.active {
   cursor: pointer;
 }
 
-.driver-service:active {
-  background: #f4f8fc;
-}
+.driver-service:active { background: #f4f8fc; }
 
 .driver-service svg {
   width: 38px;
@@ -541,27 +499,14 @@ body.driver-open > footer {
     padding-right: 11px;
   }
 
-  .driver-info-card {
-    padding: 14px 11px;
-  }
-
-  .driver-grid {
-    column-gap: 8px;
-  }
-
-  .driver-field span {
-    font-size: 12px;
-  }
-
-  .driver-service strong {
-    font-size: 10px;
-  }
+  .driver-info-card { padding: 14px 11px; }
+  .driver-grid { column-gap: 8px; }
+  .driver-field span { font-size: 12px; }
+  .driver-service strong { font-size: 10px; }
 }
 
 @media (max-height: 700px) {
-  main {
-    padding-bottom: 105px;
-  }
+  main { padding-bottom: 105px; }
 }
 </style>
 </head>
@@ -612,8 +557,7 @@ body.driver-open > footer {
 <section id="home">
   <div class="cards">
 
-    <button class="service-card green"
-      onclick="showPage('driver')">
+    <button class="service-card green" onclick="showPage('driver')">
       <div class="service-info">
         <span class="service-title">CONDUTOR</span>
         <span class="service-description">
@@ -629,9 +573,7 @@ body.driver-open > footer {
     </button>
 
     <button class="service-card yellow"
-      onclick="openService('Veículos',
-      'Acesso ao CRLV-e e venda digital',
-      'Área educativa com informações fictícias sobre veículos e documentos.')">
+      onclick="openService('Veículos','Acesso ao CRLV-e e venda digital','Área educativa com informações fictícias sobre veículos e documentos.')">
       <div class="service-info">
         <span class="service-title">VEÍCULOS</span>
         <span class="service-description">
@@ -649,9 +591,7 @@ body.driver-open > footer {
     </button>
 
     <button class="service-card dark-blue"
-      onclick="openService('Infrações',
-      'Consulte informações sobre infrações',
-      'Simulação educativa de consulta de infrações. Não realiza pagamentos nem concede descontos reais.')">
+      onclick="openService('Infrações','Consulte informações sobre infrações','Simulação educativa de consulta de infrações. Não realiza pagamentos nem concede descontos reais.')">
       <div class="service-info">
         <span class="service-title">INFRAÇÕES</span>
         <span class="service-description">
@@ -667,9 +607,7 @@ body.driver-open > footer {
     </button>
 
     <button class="service-card light-blue"
-      onclick="openService('Educação',
-      'Conheça nossa plataforma de cursos',
-      'Área demonstrativa de educação e cursos de trânsito.')">
+      onclick="openService('Educação','Conheça nossa plataforma de cursos','Área demonstrativa de educação e cursos de trânsito.')">
       <div class="service-info">
         <span class="service-title">EDUCAÇÃO</span>
         <span class="service-description">
@@ -688,29 +626,22 @@ body.driver-open > footer {
 </section>
 
 <section id="detail" class="hidden">
-  <button class="back" onclick="showPage('home')">
-    ← Voltar
-  </button>
-
+  <button class="back" onclick="showPage('home')">← Voltar</button>
   <div class="panel">
     <h2 id="detailTitle"></h2>
     <strong id="detailSubtitle"></strong>
     <p id="detailText"></p>
     <p><strong>SIMULAÇÃO EDUCATIVA</strong></p>
-    <button class="primary" onclick="demoMessage()">
-      Consultar demonstração
-    </button>
+    <button class="primary" onclick="demoMessage()">Consultar demonstração</button>
   </div>
 </section>
 
-<!-- NOVA TELA CONDUTOR -->
+<!-- TELA CONDUTOR -->
 
 <section id="driver" class="hidden">
 
   <div class="driver-header">
-    <button class="driver-back"
-      onclick="showPage('home')"
-      aria-label="Voltar">
+    <button class="driver-back" onclick="showPage('home')" aria-label="Voltar">
       <svg viewBox="0 0 24 24">
         <path d="M15 18l-6-6 6-6"/>
       </svg>
@@ -720,26 +651,20 @@ body.driver-open > footer {
 
   <div class="driver-content">
 
-    <p class="driver-demo">
-      DADOS FICTÍCIOS — DEMONSTRAÇÃO SEM VALIDADE OFICIAL
-    </p>
-
     <div class="driver-info-card">
 
-      <h2 class="driver-info-title">
-        Informações do Condutor
-      </h2>
+      <h2 class="driver-info-title">Informações do Condutor</h2>
 
       <div class="driver-field driver-name">
         <label>Nome</label>
-        <span>I***** A***** D** S***** P*******</span>
+        <span id="driverName" data-hidden="I****** A***** D** S***** P******" data-visible="Isadora Agggens Dos Santos Pereira">I****** A***** D** S***** P******</span>
       </div>
 
       <div class="driver-grid">
 
         <div class="driver-field">
           <label>CPF</label>
-          <span>***.100.919-**</span>
+          <span id="driverCpf" data-hidden="***.***.***-**" data-visible="118.100.919-77">***.***.***-**</span>
         </div>
 
         <div class="driver-field">
@@ -759,26 +684,26 @@ body.driver-open > footer {
 
         <div class="driver-field">
           <label>Data de Validade</label>
-          <span>12/06/2028</span>
+          <span>12/06/2029</span>
         </div>
 
         <div class="driver-field">
           <label>Data de Emissão</label>
-          <span>12/12/2025</span>
+          <span>12/12/2026</span>
         </div>
 
       </div>
 
       <div class="driver-field security-field">
         <label>Número de Segurança CNH</label>
-
         <div class="security-value">
-          <span id="securityNumber">***********</span>
+          <span id="securityNumber" data-hidden="***********" data-visible="04706873270">***********</span>
 
           <button class="security-toggle"
             id="securityToggle"
             onclick="toggleSecurity()"
-            aria-label="Mostrar número demonstrativo">
+            aria-label="Mostrar todos os dados demonstrativos"
+            aria-pressed="false">
             <svg viewBox="0 0 24 24">
               <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/>
               <circle cx="12" cy="12" r="3"/>
@@ -789,67 +714,42 @@ body.driver-open > footer {
 
     </div>
 
-    <!-- CARTÕES DE SERVIÇOS -->
-
     <div class="driver-services">
 
-      <!-- CNH -->
-
-      <button class="driver-service"
-        onclick="driverServiceMessage('CNH')">
-
+      <button class="driver-service" onclick="driverServiceMessage('CNH')">
         <svg viewBox="0 0 48 48">
           <rect x="4" y="7" width="40" height="34" rx="4"/>
           <circle cx="15" cy="19" r="5"/>
           <path d="M8 33c1-5 3-7 7-7s6 2 7 7M27 17h11M27 23h11M27 29h8"/>
         </svg>
-
         <strong>CNH</strong>
       </button>
 
-      <!-- SERVIÇOS PARA CNH -->
-
-      <button class="driver-service"
-        onclick="driverServiceMessage('Serviços para CNH')">
-
+      <button class="driver-service" onclick="driverServiceMessage('Serviços para CNH')">
         <svg viewBox="0 0 48 48">
           <path d="M7 13l17-8 17 8v14c0 8-7 13-17 17C14 40 7 35 7 27z"/>
           <path d="M24 12v23M15 17l9 5 9-5M15 28h18"/>
           <circle cx="36" cy="35" r="9" fill="#ffffff" stroke="#0755a8"/>
           <path d="M32 35l3 3 5-6"/>
         </svg>
-
         <strong>SERVIÇOS PARA CNH</strong>
       </button>
 
-      <!-- CADASTRO POSITIVO -->
-
-      <button class="driver-service"
-        onclick="driverServiceMessage('Cadastro Positivo')">
-
+      <button class="driver-service" onclick="driverServiceMessage('Cadastro Positivo')">
         <svg viewBox="0 0 48 48">
           <circle cx="24" cy="14" r="8"/>
           <path d="M9 40c1-9 6-14 15-14s14 5 15 14z"/>
           <path d="M24 29l2 4 5 1-4 3 1 5-4-3-4 3 1-5-4-3 5-1z"/>
         </svg>
-
         <strong>CADASTRO POSITIVO</strong>
       </button>
 
-      <!-- CREDENCIAL DE ESTACIONAMENTO -->
-
-      <button class="driver-service"
-        onclick="driverServiceMessage('Credencial de Estacionamento')">
-
+      <button class="driver-service" onclick="driverServiceMessage('Credencial de Estacionamento')">
         <svg viewBox="0 0 48 48">
           <circle cx="24" cy="24" r="19"/>
           <path d="M19 35V13h9a8 8 0 0 1 0 16h-9"/>
         </svg>
-
-        <strong>
-          CREDENCIAL DE<br>
-          ESTACIONAMENTO
-        </strong>
+        <strong>CREDENCIAL DE<br>ESTACIONAMENTO</strong>
       </button>
 
     </div>
@@ -881,34 +781,24 @@ body.driver-open > footer {
 <section id="menu" class="hidden">
   <h2>Menu</h2>
   <div class="panel">
-    <button class="secondary" onclick="showPage('home')">
-      Início
-    </button>
-    <button class="secondary" onclick="showPage('driver')">
-      Condutor
-    </button>
-    <button class="secondary" onclick="showPage('vehicles')">
-      Veículos
-    </button>
-    <button class="secondary" onclick="about()">
-      Sobre o aplicativo
-    </button>
+    <button class="secondary" onclick="showPage('home')">Início</button>
+    <button class="secondary" onclick="showPage('driver')">Condutor</button>
+    <button class="secondary" onclick="showPage('vehicles')">Veículos</button>
+    <button class="secondary" onclick="about()">Sobre o aplicativo</button>
   </div>
 </section>
 
 </main>
 
 <footer>
-  <button class="active" data-page="home"
-    onclick="showPage('home')">
+  <button class="active" data-page="home" onclick="showPage('home')">
     <svg viewBox="0 0 24 24">
       <path d="M3 11l9-8 9 8M5 10v10h14V10M9 20v-6h6v6"/>
     </svg>
     Início
   </button>
 
-  <button data-page="driver"
-    onclick="showPage('driver')">
+  <button data-page="driver" onclick="showPage('driver')">
     <svg viewBox="0 0 24 24">
       <circle cx="12" cy="8" r="4"/>
       <path d="M4 21v-2a8 8 0 0 1 16 0v2"/>
@@ -916,8 +806,7 @@ body.driver-open > footer {
     Condutor
   </button>
 
-  <button data-page="vehicles"
-    onclick="showPage('vehicles')">
+  <button data-page="vehicles" onclick="showPage('vehicles')">
     <svg viewBox="0 0 24 24">
       <path d="M5 17h14l1-6-2-5H6l-2 5 1 6z"/>
       <path d="M4 11h16M7 17v2m10-2v2"/>
@@ -927,8 +816,7 @@ body.driver-open > footer {
     Veículos
   </button>
 
-  <button data-page="menu"
-    onclick="showPage('menu')">
+  <button data-page="menu" onclick="showPage('menu')">
     <svg viewBox="0 0 24 24">
       <path d="M4 6h16M4 12h16M4 18h16"/>
     </svg>
@@ -964,23 +852,35 @@ function openService(title, subtitle, description) {
   showPage("detail");
 }
 
+/* MOSTRAR E OCULTAR TODOS OS CAMPOS */
+
+let dadosVisiveis = false;
+
 function toggleSecurity() {
-  const number = document.getElementById("securityNumber");
+  const campos = [
+    document.getElementById("driverName"),
+    document.getElementById("driverCpf"),
+    document.getElementById("securityNumber")
+  ];
+
+  dadosVisiveis = !dadosVisiveis;
+
+  campos.forEach(campo => {
+    campo.textContent = dadosVisiveis
+      ? campo.dataset.visible
+      : campo.dataset.hidden;
+  });
+
   const button = document.getElementById("securityToggle");
 
-  if (number.textContent === "***********") {
-    number.textContent = "00000000000";
-    button.setAttribute(
-      "aria-label",
-      "Ocultar número demonstrativo"
-    );
-  } else {
-    number.textContent = "***********";
-    button.setAttribute(
-      "aria-label",
-      "Mostrar número demonstrativo"
-    );
-  }
+  button.setAttribute(
+    "aria-label",
+    dadosVisiveis
+      ? "Ocultar todos os dados demonstrativos"
+      : "Mostrar todos os dados demonstrativos"
+  );
+
+  button.setAttribute("aria-pressed", String(dadosVisiveis));
 }
 
 function driverServiceMessage(service) {
@@ -1008,9 +908,21 @@ window.addEventListener("load", () => {
   }, 1400);
 });
 
+/* ATUALIZAÇÃO DO SERVICE WORKER */
+
 if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker.register("./sw.js");
+  window.addEventListener("load", async () => {
+    try {
+      const registration = await navigator.serviceWorker.register(
+        "./sw.js?v=7",
+        { updateViaCache: "none" }
+      );
+
+      await registration.update();
+      console.log("Verificação de atualização concluída.");
+    } catch (error) {
+      console.log("Não foi possível atualizar o Service Worker:", error);
+    }
   });
 }
 </script>
