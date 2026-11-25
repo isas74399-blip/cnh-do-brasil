@@ -597,8 +597,6 @@ body.driver-open > footer {
   </div>
 </section>
 
-<!-- TELA CONDUTOR -->
-
 <section id="driver" class="hidden">
 
   <div class="driver-header">
@@ -813,8 +811,6 @@ function openService(title, subtitle, description) {
   showPage("detail");
 }
 
-/* MOSTRAR E OCULTAR OS CAMPOS DEMONSTRATIVOS */
-
 let dadosVisiveis = false;
 
 function toggleSecurity() {
@@ -859,8 +855,6 @@ function about() {
   alert("CNH Estudo: aplicativo independente de demonstração, sem validade oficial.");
 }
 
-/* TEMPO DA TELA DE ABERTURA */
-
 window.addEventListener("load", () => {
   setTimeout(() => {
     const splash = document.getElementById("splash");
@@ -875,13 +869,11 @@ window.addEventListener("load", () => {
   }, 2000);
 });
 
-/* ATUALIZAÇÃO DO SERVICE WORKER */
-
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", async () => {
     try {
       const registration = await navigator.serviceWorker.register(
-        "./sw.js?v=7",
+        "./sw.js?v=8",
         { updateViaCache: "none" }
       );
 
