@@ -1,5 +1,5 @@
 
-const CACHE_NAME = "cnh-estudo-v7";
+const CACHE_NAME = "cnh-estudo-v8";
 const FILES = ["./", "./index.html"];
 
 self.addEventListener("install", event => {
@@ -30,18 +30,23 @@ self.addEventListener("fetch", event => {
 
   const url = new URL(event.request.url);
 
-  if (url.origin === self.location.origin &&
-      (url.pathname.endsWith("/") || url.pathname.endsWith("/index.html"))) {
+  if (url.origin !== self.location.origin) return;
 
+  if (
+    url.pathname.endsWith("/") ||
+    url.pathname.endsWith("/index.html")
+  ) {
     event.respondWith(
       fetch(event.request, { cache: "no-store" })
         .then(response => {
           if (response.ok) {
             const copy = response.clone();
+
             caches.open(CACHE_NAME).then(cache =>
               cache.put("./index.html", copy)
             );
           }
+
           return response;
         })
         .catch(() => caches.match("./index.html"))
@@ -51,8 +56,7 @@ self.addEventListener("fetch", event => {
   }
 
   event.respondWith(
-    caches.match(event.request).then(cached =>
-      cached || fetch(event.request)
-    )
+    fetch(event.request, { cache: "no-store" })
+      .catch(() => caches.match(event.request))
   );
 });
