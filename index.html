@@ -284,6 +284,173 @@ footer button.active {
   display: block;
 }
 
+/* TELA DE CHAVE DE ACESSO */
+
+#access {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  background: #f2f2f2;
+  overflow-y: auto;
+  padding-bottom: max(25px, env(safe-area-inset-bottom));
+}
+
+.access-header {
+  min-height: 105px;
+  background: #102c50;
+  border-radius: 0 0 23px 23px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 20px;
+  text-align: center;
+}
+
+.access-header strong {
+  color: #ffffff;
+  font-size: 19px;
+  letter-spacing: .7px;
+}
+
+.access-card {
+  background: #ffffff;
+  border-radius: 17px;
+  padding: 27px 21px 25px;
+  margin: 55px 19px 0;
+  box-shadow: 0 4px 15px #0000000c;
+  max-width: 430px;
+}
+
+.access-title {
+  color: #263548;
+  font-size: 19px;
+  font-weight: bold;
+  margin: 0 0 27px;
+  text-align: center;
+}
+
+.access-label {
+  display: block;
+  color: #263548;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.access-input-wrap {
+  width: 100%;
+  height: 55px;
+  border: 1.5px solid #0755a8;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.access-input-wrap input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  padding: 0 14px;
+  color: #263548;
+  font-size: 19px;
+  letter-spacing: 7px;
+  background: transparent;
+  min-width: 0;
+}
+
+.access-eye {
+  width: 52px;
+  height: 100%;
+  border: none;
+  background: transparent;
+  color: #0755a8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.access-eye svg {
+  width: 23px;
+  height: 23px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.access-enter {
+  width: 100%;
+  height: 52px;
+  margin-top: 25px;
+  border: none;
+  border-radius: 30px;
+  background: #0755c7;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: .7px;
+  cursor: pointer;
+}
+
+.access-enter:active {
+  transform: scale(.98);
+}
+
+.access-forgot {
+  width: 100%;
+  margin-top: 25px;
+  border: none;
+  background: transparent;
+  color: #0755a8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: .2px;
+  cursor: pointer;
+}
+
+.access-forgot svg {
+  width: 19px;
+  height: 19px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.access-error {
+  color: #c62828;
+  font-size: 12px;
+  text-align: center;
+  margin: 12px 0 0;
+  min-height: 15px;
+}
+
+.access-notice {
+  color: #7b8490;
+  font-size: 10px;
+  text-align: center;
+  line-height: 1.5;
+  margin: 25px 25px 0;
+}
+
+@media (min-width: 500px) {
+  .access-card {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 /* TELA CONDUTOR */
 
 #driver {
@@ -503,6 +670,64 @@ body.driver-open > footer {
        src="./carregando.png.JPG.jpg"
        alt="Carregamento do CNH Estudo">
 </div>
+
+<!-- TELA DE CHAVE DE ACESSO -->
+
+<section id="access" class="hidden">
+  <div class="access-header">
+    <strong>INSERIR CHAVE DE ACESSO</strong>
+  </div>
+
+  <div class="access-card">
+    <h2 class="access-title">Digite a sua chave de acesso</h2>
+
+    <label class="access-label" for="accessPin">
+      Chave de acesso
+    </label>
+
+    <div class="access-input-wrap">
+      <input
+        id="accessPin"
+        type="password"
+        inputmode="numeric"
+        pattern="[0-9]*"
+        maxlength="4"
+        autocomplete="off"
+        placeholder="••••"
+        aria-label="Digite a chave demonstrativa de quatro números">
+
+      <button
+        class="access-eye"
+        type="button"
+        onclick="toggleAccessEye()"
+        aria-label="Mostrar ou esconder chave">
+
+        <svg id="accessEyeIcon" viewBox="0 0 24 24">
+          <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/>
+          <circle cx="12" cy="12" r="3"/>
+        </svg>
+      </button>
+    </div>
+
+    <p id="accessError" class="access-error" aria-live="polite"></p>
+
+    <button class="access-enter" type="button" onclick="checkAccessPin()">
+      ENTRAR
+    </button>
+
+    <button class="access-forgot" type="button" onclick="forgotAccessPin()">
+      <svg viewBox="0 0 24 24">
+        <circle cx="8" cy="15" r="4"/>
+        <path d="M11 12l9-9M16 7l3 3M18 5l3 3"/>
+      </svg>
+      ESQUECI A CHAVE DE ACESSO
+    </button>
+  </div>
+
+  <p class="access-notice">
+    Área demonstrativa do CNH Estudo. Não é um serviço oficial.
+  </p>
+</section>
 
 <header>
   <div class="top">
@@ -798,7 +1023,17 @@ body.driver-open > footer {
 </footer>
 
 <script>
-function showPage(page) {
+/* NAVEGAÇÃO */
+
+function showPage(page, acessoLiberado = false) {
+
+  if (page === "driver" && !acessoLiberado) {
+    abrirTelaAcesso();
+    return;
+  }
+
+  document.getElementById("access").classList.add("hidden");
+
   ["home","detail","driver","vehicles","menu"].forEach(id => {
     document.getElementById(id).classList.toggle(
       "hidden", id !== page
@@ -817,6 +1052,88 @@ function showPage(page) {
 
   window.scrollTo(0,0);
 }
+
+/* TELA DE CHAVE */
+
+function abrirTelaAcesso() {
+  const access = document.getElementById("access");
+  const input = document.getElementById("accessPin");
+
+  access.classList.remove("hidden");
+
+  input.value = "";
+  document.getElementById("accessError").textContent = "";
+
+  window.scrollTo(0,0);
+
+  setTimeout(() => {
+    input.focus();
+  }, 150);
+}
+
+function toggleAccessEye() {
+  const input = document.getElementById("accessPin");
+  const icon = document.getElementById("accessEyeIcon");
+
+  if (input.type === "password") {
+    input.type = "text";
+
+    icon.innerHTML = `
+      <path d="M3 3l18 18"/>
+      <path d="M10.6 10.6a2 2 0 0 0 2.8 2.8"/>
+      <path d="M9.9 5.2A11 11 0 0 1 12 5c6.5 0 10 7 10 7a15 15 0 0 1-3.1 3.8"/>
+      <path d="M6.2 6.2C3.5 8 2 12 2 12s3.5 7 10 7c1.3 0 2.5-.3 3.6-.8"/>
+    `;
+  } else {
+    input.type = "password";
+
+    icon.innerHTML = `
+      <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/>
+      <circle cx="12" cy="12" r="3"/>
+    `;
+  }
+}
+
+function checkAccessPin() {
+  const input = document.getElementById("accessPin");
+  const error = document.getElementById("accessError");
+
+  const chave = input.value;
+
+  if (chave === "1602") {
+    error.textContent = "";
+    document.getElementById("access").classList.add("hidden");
+
+    showPage("driver", true);
+  } else {
+    error.textContent = "Chave de acesso incorreta. Tente novamente.";
+    input.value = "";
+    input.focus();
+  }
+}
+
+function forgotAccessPin() {
+  alert(
+    "Esta é uma chave demonstrativa do CNH Estudo.\n\nChave de acesso: 1602"
+  );
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const input = document.getElementById("accessPin");
+
+  input.addEventListener("input", () => {
+    input.value = input.value.replace(/\D/g, "").slice(0, 4);
+    document.getElementById("accessError").textContent = "";
+  });
+
+  input.addEventListener("keydown", event => {
+    if (event.key === "Enter") {
+      checkAccessPin();
+    }
+  });
+});
+
+/* OUTRAS FUNÇÕES */
 
 function openService(title, subtitle, description) {
   document.getElementById("detailTitle").textContent = title;
@@ -902,7 +1219,7 @@ if ("serviceWorker" in navigator) {
   window.addEventListener("load", async () => {
     try {
       const registration = await navigator.serviceWorker.register(
-        "./sw.js?v=10",
+        "./sw.js?v=11",
         { updateViaCache: "none" }
       );
 
